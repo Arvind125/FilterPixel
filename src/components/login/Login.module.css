@@ -1,0 +1,54 @@
+.login {
+  padding: 1rem;
+  margin: 3rem auto;
+  max-width: 20%;
+}
+
+.form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  height: 1rem;
+  margin: 2px;
+  height: 2rem;
+}
+
+.action {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.form + button {
+  width: 84%;
+}
+
+.button {
+  height: 2rem;
+  color: white;
+  background-color: rgb(122, 40, 198);
+  border: 0px;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background-color: rgb(89, 17, 157);
+  cursor: pointer;
+}
+
+.action button:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+.action button {
+  background-color: transparent;
+  border: 0px;
+}

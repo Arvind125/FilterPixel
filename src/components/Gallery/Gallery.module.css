@@ -1,0 +1,47 @@
+.card {
+  margin: 2rem 2rem;
+  padding: 0 2rem;
+}
+
+.gallery {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.actions {
+  border-bottom: 2px solid rgb(0, 0, 0);
+  padding-top: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions button {
+  margin: 2px 0;
+  height: 2.3rem;
+  color: white;
+  background-color: rgb(170, 118, 219);
+  border: 0px;
+  border-radius: 6px;
+  width: 48%;
+}
+
+.actions button:hover {
+  background-color: rgb(89, 17, 157);
+  cursor: pointer;
+}

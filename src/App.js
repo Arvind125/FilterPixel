@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Register from "./components/Register/Register";
+import Login from "./components/login/Login";
+import Header from "./components/Header/Header";
+import { useSelector } from "react-redux";
+import Gallery from "./components/Gallery/Gallery";
+import { useState } from "react";
 
 function App() {
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const [isRegistering, setIsRegistering] = useState(false);
+
+  const toggleRegisteringHandler = () => {
+    setIsRegistering((prevState) => {
+      return !prevState;
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {!isLoggedIn && !isRegistering && (
+        <Login toggleRegisteringHandler={toggleRegisteringHandler} />
+      )}
+      {!isLoggedIn && isRegistering && (
+        <Register toggleRegisteringHandler={toggleRegisteringHandler} />
+      )}
+      {isLoggedIn && <Gallery />}
     </div>
   );
 }
